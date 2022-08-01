@@ -1,3 +1,4 @@
+// Using Kick Assembler
 BasicUpstart2(start)  // 10 sys$0810
 
 start: 
