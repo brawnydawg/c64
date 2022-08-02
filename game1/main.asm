@@ -1,15 +1,17 @@
 // Using Kick Assembler
-BasicUpstart2(start)  // 10 sys$0810
+BasicUpstart2(main)  // 10 sys$0810
 
-start: 
-    sei         //set interrupt disable flag
-
+main: 
+    sei         // set the interrupt disable flag
+    jsr init_screen
+    cli         // clear the interrupt disable flag
+    jmp *
 
 // ============================================================
 // Initialize the screen
 // ============================================================
 init_screen:
-
+    
 
 
 
