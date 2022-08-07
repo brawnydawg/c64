@@ -8,6 +8,17 @@ main:
     jmp *               // Infinate loop.
 
 // ============================================================
+// Data
+// ============================================================
+
+line1:
+    .text "    john palermo presents       "
+line2:
+    .text "a first program in 6502 assembly"
+    
+    
+
+// ============================================================
 // Initialize the screen
 // ============================================================
 init_screen:
@@ -36,4 +47,11 @@ clear:                  // Clear the entire screen
 
     rts                 // return from this subroutine
 
-
+// ============================================================
+// Initialize the static text on the screen
+// ============================================================
+init_text:
+    ldx #$00            // Initialize the index register with 0
+loop_text:              
+    lda line1,x         // Read next character from line 1 of text
+    
