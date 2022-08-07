@@ -12,15 +12,27 @@ Number of lines to display = $n$
 
 Length of character string = $len_n$
 
-Center colum for string = $C_n$
+Center colum for string of text = $C_n$
 
 Row to begin displaying 1 or more lines centered on the screen = $R$
 
-$R = (\frac{\$19}{\$02}) - \frac{n}{2}$, for $n>=2$
+$R = (\frac{\$19}{\$02}) - \frac{n}{\$02}$, for $n>=2$
 
-$R = \$0D - \frac{n}{2}$, for $n >= 2$
+$R = \frac{\$19 - n}{\$02}$, for $n >= 2$
 
+$R = \$0D$, for $n = 1$
 
+In summary, to find the center row of the screen for displaying one or more lines of text, we have:
+
+> $R = \$0D$, for $n = 1$
+> $R = \frac{\$19 - n}{\$02}$, for $n >= 2$
+> where n is the number of rows
+
+$C_n = \frac{\$28}{\$02} - \frac{len_n}{\$02}$
+
+$C_n = \frac{\$28 - len_n}{\$02}$
+
+In summary, to find the starting column of a string of text to be displayed in the centre of a row, we have the formula:
 
 # Colour Memory
 
