@@ -1,9 +1,15 @@
 // Using Kick Assembler
 BasicUpstart2(main)  // 10 sys$0810
 
+.const line1_start=$05C2
+.const color1_start=$D9C2
+.const line2_start=$05E4
+.const color2_start=$D9E4
+
 main: 
     sei                 // Set the interrupt disable flag.
     jsr init_screen     // Initialize the screen.
+    jsr init_text       // Initialize the text.
     cli                 // Clear the interrupt disable flag.
     jmp *               // Infinate loop.
 
@@ -11,10 +17,26 @@ main:
 // Data
 // ============================================================
 
+// line 1 starting address for screen ram
+// = $0414 + $0028($0C - $01) - $0A
+// = $0414 + $01B8 - $0A 
+// = $05C2
+// line 1 starting address for colour ram
+// = $D814 + $01B8 - $0A 
+// = $D9C2
+
+// line 2 starting address for screen ram
+// = $0414 + $0028($0C - $01) + $0028 - $0010
+// = $0414 + $01B8 + $0028 - $0010
+// = $05E4
+// line 2 starting address for colour ram
+// = $D814 + $01B8 + $0028 - $0010
+// = $D9E4
+
 line1:
-    .text "    john palermo presents       "
+    .text "john palermo presents           "     // len = 21
 line2:
-    .text "a first program in 6502 assembly"
+    .text "a first program in 6502 assembly"    // len = 32, hex 20
     
     
 
@@ -54,4 +76,16 @@ init_text:
     ldx #$00            // Initialize the index register with 0
 loop_text:              
     lda line1,x         // Read next character from line 1 of text
+    sta line1_start,x   // Place it on the screen
+    lda #$01            // White
+    sta color1_start,x  // Set foreground colour to whilte
+    lda line2,x         // Read next character from line 2 of text
+    sta line2_start,x   // Place it on the screen
+    lda #$01            // White
+    sta color2_start,x  // Set foregroud colour to white
+
+    inx                 // Increment index
+    cpx #$20            // Max length is 32 ($20)
+    bne loop_text       // Loop if not at end of longest string
+    rts
     

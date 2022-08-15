@@ -2,7 +2,7 @@
 
 ![](assets/20220803_184746_c64_screen_memory.png)
 
-## Calculate addresses for displaying multi-line text on the center of screen 
+## Calculate addresses for displaying multi-line text on the center of screen
 
 > To calculate the sequence of addresses {$A_0,A_1 ... A_{n-1}$} needed for centering $n$ lines of text (numbered $0$ to $n-1$) on the C64 screen, we can use this formula:
 >
@@ -15,6 +15,10 @@
 > $n$ is the number of lines of text to display
 >
 > $len_i$ is the length of the string at line $i$
+>
+> For colour memory, a similar formula can be used with only the first constant changed.
+>
+> ${(A_i)}_{i=0}^{n-1} = 0xD814 + 0x28(0x0C - \frac{n}{0x02}) + 0x28i - \frac{len_i}{0x02}$
 
 # Colour Memory
 
