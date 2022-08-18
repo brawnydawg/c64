@@ -1,0 +1,4 @@
+.const line1_start=$05C2
+.const color1_start=$D9C2
+.const line2_start=$05E4
+.const color2_start=$D9E4
