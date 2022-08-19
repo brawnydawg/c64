@@ -1,4 +1,11 @@
-# c64
-An entire repository devoted to the c64, including knowledge, tutorials, links, and source code for some games I've created.
+# Commodore 64 Game
 
+Working on the game.
+
+Completed:
+- 2 lines of text on the center of the screen.
+
+Next:
+- Add a colour washer effect
+- Add music
 
