@@ -1,2 +1,3 @@
 out/*.*
-game1/.source.txt
+*/.source.txt
+*.yml
