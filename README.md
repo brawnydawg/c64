@@ -14,4 +14,4 @@ Next:
 
 Resources:
 
-[c64_resources/](c64_resources/)
+[c64_resources/](https://johnpalermo.github.io/c64_resources/)
