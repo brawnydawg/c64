@@ -11,3 +11,7 @@ Next:
 
 - Add a colour washer effect
 - Add music
+
+Resources:
+
+[c64_resources/](c64_resources/)
