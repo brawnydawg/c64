@@ -4,6 +4,8 @@
 
 ## Calculate addresses for displaying multi-line text on the center of screen
 
+These formulas are explained in the file ***calculate_center_of_screen_for_displaying_multi-line_text.md***, which can be found in the
+folder docs of this repository
 > To calculate the sequence of addresses {$A_0,A_1 ... A_{n-1}$} needed for centering $n$ lines of text (numbered $0$ to $n-1$) on the C64 screen, we can use this formula:
 >
 > ${(A_i)}_{i=0}^{n-1} = \$0414 + \$0028(\$0C - \frac{n}{\$02}) + \$0028i - \frac{len_i}{\$02}$

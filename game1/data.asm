@@ -4,6 +4,9 @@
 // Data
 // ============================================================
 
+// The formula for this is explained in the notes.md file
+// found in the docs folder of this repository 
+
 // line 1 starting address for screen ram
 // = $0414 + $0028($0C - $01) - $0A
 // = $0414 + $01B8 - $0A 
@@ -11,6 +14,9 @@
 // line 1 starting address for colour ram
 // = $D814 + $01B8 - $0A 
 // = $D9C2
+
+// The formula for this is explained in the notes.md file
+// found in the docs folder of this repository 
 
 // line 2 starting address for screen ram
 // = $0414 + $0028($0C - $01) + $0028 - $0010

@@ -12,7 +12,7 @@ loop_text:
     lda line1,x         // Read next character from line 1 of text
     sta Line1_Start,x   // Place it on the screen
     lda #$01            // White
-    sta Color1_Start,x  // Set foreground colour to whilte
+    sta Color1_Start,x  // Set foreground colour to white
     lda line2,x         // Read next character from line 2 of text
     sta Line2_Start,x   // Place it on the screen
     lda #$01            // White
